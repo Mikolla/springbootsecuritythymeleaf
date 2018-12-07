@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>User page</title>
+</head>
+<body>
+<center>
+
+
+<div>
+
+    <div>
+        <div>
+            <p th:text="'Hello, ' + ${user} + '!'" />
+            <label th:inline="text">You are authorized as, [[${user}]]!</label>
+        </div>
+
+        <p th:inline="text">Current user name =  [[${#httpServletRequest.remoteUser}]]!</p>
+        <form th:action="@{/logout}" method="post">
+            <input type="submit" value="logout"/>
+        </form>
+
+    </div>
+
+</div>
+</center>
+</body>
+</html>
