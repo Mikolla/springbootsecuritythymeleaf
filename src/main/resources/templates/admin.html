@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Admin page</title>
+</head>
+<body>
+
+<div>
+    <div>
+        <p th:text="'Hello, ' + ${adminName} + '!'" />
+        <label th:inline="text">You are authorized as, [[${adminName}]]!</label>
+    </div>
+
+    <p th:inline="text">Current user name =  [[${#httpServletRequest.remoteUser}]]!</p>
+    <form th:action="@{/logout}" method="post">
+        <input type="submit" value="logout"/>
+    </form>
+
+</div>
+
+<div align="center">
+
+
+    <div align="right">
+        <h3><a  href="/admin/add">Add user</a> </h3>
+    </div>
+</div>
+</body>
+</html>
