@@ -1,0 +1,93 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+
+
+<head>
+    <title>Edit user</title>
+</head>
+<body>
+<div>
+
+    <label>EDIT FORM</label>
+
+    <div th:if="${param.error}">
+        <div>
+            <p>All fields must be filled.</p>
+        </div>
+    </div>
+
+ <!--   <input type="text" class="form-control" id="message" th:name="message" placeholder="Enter your note." maxlength="100"/> -->
+
+
+
+        <div>
+            <p th:text="'Hello, ' + ${user.name} + '!'" />
+            <input type="text"  id="name" th:name="name" th:placeholder="${user.name}" maxlength="100"/>
+        </div>
+
+    <form th:action="@{/admin/edit}" method="post">
+
+        <div>
+            <input type="text" name="username" id="username"
+                   th:value="${user.name}" required="true" autofocus="true"/>
+        </div>
+        <div>
+            <input type="password" name="password" id="password"
+                   value="Password" required="true"/>
+        </div>
+<br/>
+<br/>
+<br/>
+<br/>
+        <div>
+            <label>Name</label>
+        </div>
+        <div>
+            <input type="text" name="name" th:value="${user.name}"/>
+        </div>
+        <br/>
+               <div>
+                    <label>Login</label>
+                </div>
+                <div>
+                    <input type="text" name="login" th:value="${user.login}"/>
+                </div>
+        <br/>
+
+                <div>
+                    <label>Password</label>
+                </div>
+                <div>
+                    <input type="text" name="password" th:value="${user.password}"/>
+                </div>
+<!--
+                <div>
+                    <label>Role</label>
+                </div>
+                <div>
+                    <select  name="role">
+                        <option></option>
+                        <option>User</option>
+                        <option>Admin</option>
+                    </select>
+                </div>
+                <br> -->
+
+
+
+
+        <div>
+            <div>
+                <input type="submit"  value="save"/>
+            </div>
+            <div>
+            </div>
+        </div>
+
+    </form>
+
+
+            </div>
+            </body>
+            </html>
