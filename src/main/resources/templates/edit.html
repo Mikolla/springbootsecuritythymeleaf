@@ -10,6 +10,7 @@
 <div>
 
     <label>EDIT FORM</label>
+    <br/>
 
     <div th:if="${param.error}">
         <div>
@@ -17,41 +18,23 @@
         </div>
     </div>
 
- <!--   <input type="text" class="form-control" id="message" th:name="message" placeholder="Enter your note." maxlength="100"/> -->
 
-
-
-        <div>
-            <p th:text="'Hello, ' + ${user.name} + '!'" />
-            <input type="text"  id="name" th:name="name" th:placeholder="${user.name}" maxlength="100"/>
-        </div>
 
     <form th:action="@{/admin/edit}" method="post">
 
+
         <div>
-            <input type="text" name="username" id="username"
-                   th:value="${user.name}" required="true" autofocus="true"/>
-        </div>
-        <div>
-            <input type="password" name="password" id="password"
-                   value="Password" required="true"/>
-        </div>
-<br/>
-<br/>
-<br/>
-<br/>
-        <div>
-            <label>Name</label>
-        </div>
-        <div>
-            <input type="text" name="name" th:value="${user.name}"/>
+                     <label>Name</label>
+                     </div>
+                     <div>
+                     <input type="text" name="name" th:value="${user.name}" required="true"/>
         </div>
         <br/>
-               <div>
+                <div>
                     <label>Login</label>
                 </div>
                 <div>
-                    <input type="text" name="login" th:value="${user.login}"/>
+                    <input type="text" name="login" th:value="${user.login}" required="true"/>
                 </div>
         <br/>
 
@@ -59,9 +42,10 @@
                     <label>Password</label>
                 </div>
                 <div>
-                    <input type="text" name="password" th:value="${user.password}"/>
+                    <input type="text" name="password" th:value="${user.password}" required="true"/>
                 </div>
-<!--
+        <br/>
+
                 <div>
                     <label>Role</label>
                 </div>
@@ -72,7 +56,7 @@
                         <option>Admin</option>
                     </select>
                 </div>
-                <br> -->
+
 
 
 
@@ -80,6 +64,8 @@
         <div>
             <div>
                 <input type="submit"  value="save"/>
+                <input type="hidden" name="id" th:value="${user.id}"/>
+                <a href="/admin">Back</a>
             </div>
             <div>
             </div>
