@@ -23,29 +23,24 @@
     <form th:action="@{/admin/edit}" method="post">
 
 
-        <div>
+                <div>
                      <label>Name</label>
                      </div>
                      <div>
                      <input type="text" name="name" th:value="${user.name}" required="true"/>
-        </div>
-        <br/>
+                </div>
                 <div>
                     <label>Login</label>
                 </div>
                 <div>
                     <input type="text" name="login" th:value="${user.login}" required="true"/>
                 </div>
-        <br/>
-
                 <div>
                     <label>Password</label>
                 </div>
                 <div>
                     <input type="text" name="password" th:value="${user.password}" required="true"/>
                 </div>
-        <br/>
-
                 <div>
                     <label>Role</label>
                 </div>
