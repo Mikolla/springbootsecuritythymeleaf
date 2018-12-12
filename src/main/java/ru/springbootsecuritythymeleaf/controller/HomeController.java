@@ -216,7 +216,7 @@ public class HomeController {
 		return userName;
 	}
 
-	@RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "/admin/delete/{id}", method = RequestMethod.GET)
 	public String deleteUser(@PathVariable("id") Long id) {
 		userService.deleteUser(id);
 		return "redirect:/admin";
