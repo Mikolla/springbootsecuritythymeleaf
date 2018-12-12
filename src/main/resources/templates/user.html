@@ -16,7 +16,7 @@
             <label th:inline="text">You are authorized as, [[${user}]]!</label>
         </div>
 
-        <p th:inline="text">Current user name =  [[${#httpServletRequest.remoteUser}]]!</p>
+     <!--   <p th:inline="text">Current user name =  [[${#httpServletRequest.remoteUser}]]!</p> -->
         <form th:action="@{/logout}" method="post">
             <input type="submit" value="logout"/>
         </form>
@@ -25,11 +25,11 @@
 
 </div>
 
-<span sec:authorize="isAuthenticated()">
+        <!--    <span sec:authorize="isAuthenticated()">
                 | Logged user: <span sec:authentication="name"></span> |
                 Roles: <span sec:authentication="principal.authorities"></span> |
                 <a th:href="@{/logout}">Sign Out</a>
-            </span>
+            </span> -->
 
 </body>
 </html>
